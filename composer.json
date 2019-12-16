@@ -5,6 +5,7 @@
     "keywords": ["yii2","extension"],
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Khalul",
