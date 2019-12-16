@@ -1,6 +1,6 @@
 <?php
 
-namespace prophetkhalul\breadcrumbs;
+namespace prophetkhalul\breadcrumbsmeta;
 
 use Yii;
 use yii\helpers\Html;
