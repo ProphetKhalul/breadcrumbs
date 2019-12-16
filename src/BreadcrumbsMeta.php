@@ -22,11 +22,20 @@ class BreadcrumbsMeta extends Breadcrumbs
         }
 
 
+        //Если это amp, то для крошки на главную делать ссылку на amp версию, а не обычную
+        if(!is_null(Yii::$app->request->get('amp'))){
+            $home_url = Yii::$app->homeUrl.'?amp';
+        }
+        else{
+            $home_url = Yii::$app->homeUrl;
+        }
+
+
         //Если из layout вообще не передали homeLink, то присваиваем значения по-умолчанию
         if (!isset($config['homeLink']) || $config['homeLink'] === null) {
             $config['homeLink'] = [
                 'label' => Yii::t('yii', 'Home'),
-                'url'   => Yii::$app->homeUrl,
+                'url'   => $home_url,
                 'rel' => 'nofollow'
             ];
         }
@@ -34,7 +43,7 @@ class BreadcrumbsMeta extends Breadcrumbs
         //Если в homeLink что-то есть, то присваиваем значения из массивов, если есть. После вызываем getHome
         if ($config['homeLink'] !== false) {
             $label = isset($config['homeLink']['label']) ? $config['homeLink']['label'] : null;
-            $url = isset($config['homeLink']['url']) ? $config['homeLink']['url'] : (is_string($config['homeLink']) ? $config['homeLink'] : Yii::$app->homeUrl);
+            $url = isset($config['homeLink']['url']) ? $config['homeLink']['url'] : (is_string($config['homeLink']) ? $config['homeLink'] : $home_url);
             //Чтобы не ставить rel нужно в вызове виджета в layouts указать 'rel'=>false для homeLink
             $rel = isset($config['homeLink']['rel']) ? ($config['homeLink']['rel'] === false ? null : $config['homeLink']['rel']) : 'nofollow';
             $config['homeLink'] = self::SchemeForHome($label, $url, $rel);
