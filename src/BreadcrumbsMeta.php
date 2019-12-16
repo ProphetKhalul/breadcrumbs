@@ -1,6 +1,6 @@
 <?php
 
-namespace app\widgets;
+namespace prophetkhalul\breadcrumbs;
 
 use Yii;
 use yii\helpers\Html;
