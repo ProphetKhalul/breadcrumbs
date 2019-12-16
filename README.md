@@ -1,7 +1,3 @@
-Schema for yii2 breadcrumbs
-===========================
-Schema for yii2 breadcrumbs
-
 Installation
 ------------
 
@@ -10,7 +6,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist prophetkhalul/yii2-breadcrumbsmeta "*"
+composer require --prefer-dist prophetkhalul/yii2-breadcrumbsmeta "*"
 ```
 
 or add
