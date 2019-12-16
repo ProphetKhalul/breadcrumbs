@@ -1,0 +1,23 @@
+{
+    "name": "prophetkhalul/yii2-breadcrumbsmeta",
+    "description": "Schema for yii2 breadcrumbs",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Khalul",
+            "email": "khalul@mail.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "prophetkhalul\\breadcrumbsmeta\\": "src"
+        }
+    }
+}
